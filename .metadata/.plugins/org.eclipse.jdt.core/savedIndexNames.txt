@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\lemin\Desktop\HOCJAVA\QUANLIXEMAY\.metadata\.plugins\org.eclipse.jdt.core
+1521324138.index
+2996214043.index
+3762025981.index
+3959137331.index
+1865797976.index

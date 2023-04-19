@@ -1,0 +1,36 @@
+package hue.edu.vn.service;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
+
+import javax.naming.spi.DirStateFactory.Result;
+
+import hue.edu.vn.model.Account;
+
+public class DangNhapService extends SqlConnection {
+	public Vector<Account> layDuLieuDangNhap()
+	{
+		Vector<Account> vec = new  Vector<Account>();
+		try {
+			String sql = "select * from acccount";
+			Statement statement = conn.createStatement();
+			ResultSet result = statement.executeQuery(sql);
+			
+			while(result.next())
+			{
+				Account ac = new Account();
+				ac.setTaiKhoan(result.getString(1));
+				ac.setMatKhau(result.getString(2));
+				vec.add(ac);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return vec;
+	}
+	
+	
+}

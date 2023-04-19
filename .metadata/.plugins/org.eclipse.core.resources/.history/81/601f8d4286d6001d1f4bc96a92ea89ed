@@ -1,0 +1,75 @@
+package hue.edu.vn.ui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dialog;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import com.microsoft.sqlserver.jdbc.dataclassification.Label;
+
+import hue.edu.vn.model.Account;
+import hue.edu.vn.service.DangNhapService;
+
+public class DangKyTaiKhoanUI extends JFrame{
+	JTextField txtTaiKhoan;
+	JPasswordField txtMatKhauCu, txtMatKhauMoi, txtXacNhanMatKhauMoi;
+	
+	JButton btnDoiMatKhau, btnTroLai;
+	DangNhapService dn;
+	
+	
+	public DangKyTaiKhoanUI()
+	{
+		super("ĐỔI MẬT KHẨU");
+		addControls();
+		addEvents();
+		ketNoiCoSoDuLieu();
+	}
+
+	private void ketNoiCoSoDuLieu() {
+		dn = new DangNhapService();
+	}
+
+	private void addEvents() {
+		btnTroLai.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Tác Đống");
+				dispose();
+			}	
+		});
+		
+		
+		
+	}
+
+	private void addControls() {
+		
+		
+	}
+	
+	public void showWindow()
+	{
+		this.setSize(300,300);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+		
+	}
+}

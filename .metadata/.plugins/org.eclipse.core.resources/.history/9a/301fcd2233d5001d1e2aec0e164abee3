@@ -1,0 +1,71 @@
+package hue.edu.vn.ui;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class DangNhapUI extends JFrame{
+	
+	JTextField txtTaiKhoan;
+	JPasswordField txtMatKhau;
+	
+	
+	public DangNhapUI()
+	{
+		super("ĐĂNG NHẬP");
+		addControls();
+		addEvents();
+	}
+
+	private void addEvents() {
+		
+	}
+
+	private void addControls() {
+		Container con = getContentPane();
+		JPanel pnMain = new JPanel();
+		pnMain.setLayout(new BoxLayout(pnMain, BoxLayout.Y_AXIS));
+		con.add(pnMain);
+		
+		JPanel pnTitleDN = new JPanel();
+		pnTitleDN.setLayout(new FlowLayout());
+		JLabel lblTitle = new JLabel("ĐĂNG NHẬP");
+		lblTitle.setFont(new Font(lblTitle.getText(), Font.BOLD, 25));
+		lblTitle.setForeground(Color.blue);
+		pnTitleDN.add(lblTitle);
+		
+		pnMain.add(pnTitleDN);
+		
+		
+		JPanel pnThongTinDangNhap = new JPanel();
+		pnThongTinDangNhap.setLayout(new BoxLayout(pnThongTinDangNhap, BoxLayout.Y_AXIS));
+		JPanel pnTaiKhoan = new JPanel();
+		JLabel lblTaiKhoan = new JLabel("Tài Khoản");
+		txtTaiKhoan = new JTextField();
+		pnTaiKhoan.setLayout(new FlowLayout());
+		pnTaiKhoan.add(lblTaiKhoan);
+		pnTaiKhoan.add(txtTaiKhoan);
+		pnThongTinDangNhap.add(pnTaiKhoan);
+		
+		
+	}
+	
+	
+	public void showWindow()
+	{
+		this.setSize(400, 400);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+	
+	
+}
