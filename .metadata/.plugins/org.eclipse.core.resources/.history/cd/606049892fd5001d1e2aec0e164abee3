@@ -1,8 +1,0 @@
-package hue.edu.vn.service;
-
-public class SqlConnection {
-	public SqlConnection()
-	{
-		
-	}
-}

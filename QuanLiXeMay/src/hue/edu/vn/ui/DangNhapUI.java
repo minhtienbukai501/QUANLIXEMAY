@@ -1,5 +1,6 @@
 package hue.edu.vn.ui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -7,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +17,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
 import hue.edu.vn.service.DangNhapService;
 
@@ -62,6 +66,8 @@ public class DangNhapUI extends JFrame{
 				if(check == true)
 				{
 					JOptionPane.showMessageDialog(null, "Đăng Nhập Thành Công");
+					MainUI ui = new MainUI();
+					ui.ShowWindows();
 				} else 
 				{
 					JOptionPane.showMessageDialog(null, "Sai Tài Khoản Hoặc Mật Khẩu");
@@ -81,9 +87,10 @@ public class DangNhapUI extends JFrame{
 
 	private void addControls() {
 		Container con = getContentPane();
+		con.setLayout(new BorderLayout());
 		JPanel pnMain = new JPanel();
 		pnMain.setLayout(new BoxLayout(pnMain, BoxLayout.Y_AXIS));
-		con.add(pnMain);
+		con.add(pnMain, BorderLayout.CENTER);
 		
 		JPanel pnTitleDN = new JPanel();
 		pnTitleDN.setLayout(new FlowLayout());
@@ -127,6 +134,11 @@ public class DangNhapUI extends JFrame{
 		pnButDangNhap.add(btnDangKy);
 		pnButDangNhap.add(btnDoiMatKhau);
 		
+		
+		Border border = BorderFactory.createLineBorder(Color.red);
+		TitledBorder title = new TitledBorder(border, "Đăng Nhập");
+		title.setTitleColor(Color.BLUE);
+		pnMain.setBorder(title);
 	}
 	
 	
